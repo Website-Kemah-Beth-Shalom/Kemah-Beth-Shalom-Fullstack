@@ -2,7 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Webconfig;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
 
@@ -30,7 +32,14 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+
+
+        // for webconfig caching data
+        $webconfig = new Webconfig();
+        $webconfig = $webconfig->getAllData();
+
         return array_merge(parent::share($request), [
+            'companyData' => $webconfig,
             'auth' => [
                 'user' => $request->user(),
             ],

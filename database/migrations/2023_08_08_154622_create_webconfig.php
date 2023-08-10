@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('webconfigs', function (Blueprint $table) {
             $table->id();
+            $table->string('category')->default('general');
             $table->string('title')->unique();
             $table->string('alias');
             $table->string('type');

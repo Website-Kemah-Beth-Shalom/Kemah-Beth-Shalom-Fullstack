@@ -31,9 +31,13 @@ export default function Login({ status, canResetPassword }: { status?: string, c
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+            <form onSubmit={submit}
 
-            <form onSubmit={submit}>
-                <div>
+                className='flex flex-col justify-center items-center w-full h-full'
+            >
+                <div
+                    className='flex flex-col justify-center items-center w-[30rem] h-full'
+                >
                     <InputLabel htmlFor="email" value="Email" />
 
                     <TextInput
@@ -50,15 +54,16 @@ export default function Login({ status, canResetPassword }: { status?: string, c
                     <InputError message={errors.email} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
+                <div
+                    className='flex flex-col justify-center items-center w-[30rem] h-full'
+                >
                     <InputLabel htmlFor="password" value="Password" />
-
                     <TextInput
                         id="password"
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-ful l text-black"
                         autoComplete="current-password"
                         onChange={(e) => setData('password', e.target.value)}
                     />

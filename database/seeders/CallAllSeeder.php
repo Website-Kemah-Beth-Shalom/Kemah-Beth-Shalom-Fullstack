@@ -12,6 +12,7 @@ class CallAllSeeder extends Seeder
     {
         $this->call([
             WebconfigSeeder::class,
+            // ProductSeeder::class,
             // UserSeeder::class,
             // PostSeeder::class,
             // CommentSeeder::class,

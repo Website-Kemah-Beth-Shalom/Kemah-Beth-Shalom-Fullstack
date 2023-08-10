@@ -17,3 +17,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+*.zip
+*.tar.gz
+*.tar
+*.gz
+
+.env.sample
