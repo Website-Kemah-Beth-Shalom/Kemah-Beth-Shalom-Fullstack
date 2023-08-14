@@ -3,7 +3,6 @@ body{
 }
 
 .container{
-    border: 5px solid red;
     margin: 0px auto;
     box-sizing: border-box;
     padding: 75px;
@@ -189,5 +188,41 @@ body{
         font-weight: bold;
         width: 70rem;
         margin: auto;
+
+        .containerMap{
+            width: 70rem;
+            height: 40.125rem;
+            position: relative;
+            .locationButton{
+                position: absolute;
+                bottom: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 0.75rem;
+                background: #B88E2F;
+                width: 19.6875rem;
+                height: 3.6875rem;
+                padding: 1.125rem 2.25rem;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                font-weight: 700;
+                color: white;
+                transition: 300ms;
+            }
+
+            .locationButton:hover{
+                width: 21rem;
+                height: 4rem;
+                font-size: 1.15rem;
+                filter: brightness(110%);
+
+            }
+        }
+
+        iframe{
+            min-width: 100%;
+            min-height: 100%;
+        }
     }
 }    
