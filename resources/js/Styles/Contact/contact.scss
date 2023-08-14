@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    overflow-x: hidden;
 }
 
 .container{
@@ -113,6 +114,7 @@ body{
                         font-size: 0.75rem;
                         line-height: 1.25rem;
                         transition: 150ms;
+                        font-weight: bold;
                     }
                     input::placeholder{
                         color: #8D8D8D;
@@ -145,10 +147,13 @@ body{
     
                 .inputTitle{
                     flex: 100%;
+                    input{
+                        width: 95%;
+                    }
                 }
 
                 .inputMessage{
-                    width: 90%;
+                    width: 95%;
                     height: 100px;
                     textarea{
                         width: 100%;
@@ -226,3 +231,102 @@ body{
         }
     }
 }    
+
+//mobile styling
+@media (max-width:415px){
+    body{
+
+        .logo{
+            justify-content: center;
+            width: 22.75rem !important;
+            height: 6.0625rem !important;
+        }
+
+        .containerContact{
+            margin-top: 3rem !important;
+            display: block !important;
+            width: 22.75rem !important;
+            height: 73rem !important;
+
+            .infoContact{
+                margin: 0px auto;
+                width: 22rem !important;
+                height: 28rem !important;
+                text-align: center;
+                h2{
+                    font-size: 1.5rem !important;
+                }
+                p{
+                    font-size: 0.75rem !important;
+                    margin-bottom: 0px !important;
+                }
+                .infoDesc{
+                    margin-bottom: 1.5rem !important;
+                }
+
+                .listContact{
+                    margin-top: 0px !important;
+                    li{
+                        margin: 0px;
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 1rem !important;
+                        img{
+                            margin: -1rem auto 0px !important;
+                            width: 1.5rem !important;
+                            height: 1.5rem !important;
+                        }
+                    }
+                }
+            }
+            .formContact{
+                margin: 0px auto !important;
+                width: 100% !important;
+                .inputGroup{
+                    flex: 100% !important;
+                }
+                .inputEmail{
+                    input{
+                        width: 90% !important;
+                    }
+                }
+                .inputTitle{
+                    input{
+                        width: 90% !important;
+                    }
+                }
+                .inputMessage{
+                    textarea{
+                        height: 10rem !important;
+                        width: 90% !important;
+                    }
+                }
+                button{
+                    bottom: 1.5rem !important;
+                    left: 50% ;
+                    align-items: center !important;
+                    margin: 0px auto !important;
+                    transform: translateX(-50%) !important;
+                }
+            }
+        }
+
+        .containerLocation{
+            .titleLocation{
+                border: 2px solid red;
+                color: #434343;
+                font-size: 2.5rem;
+                margin: 0px auto !important;
+            }
+
+            .containerMap{
+                width: 22.75rem !important;
+                height: 40.125rem !important;
+                iframe{
+                    width: 100% !important;
+                }
+            }
+
+        }
+    }
+}

@@ -19,7 +19,7 @@ export default function ContactPage() {
                 <div className="containerContact">
                     <div className="infoContact">
                         <h2>Informasi Kontak Kami</h2>
-                        <p>Kirimkan pesan untuk Kemah Beth Shalom jika ingin mengadakan kegiatan atau kerjasama lainnya.</p>
+                        <p className='infoDesc'>Kirimkan pesan untuk Kemah Beth Shalom jika ingin mengadakan kegiatan atau kerjasama lainnya.</p>
                         <div className='listContact'>
                             <ul>
                                 <li>
