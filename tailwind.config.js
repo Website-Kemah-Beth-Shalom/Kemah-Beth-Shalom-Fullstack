@@ -15,6 +15,11 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                oldLace: '#fff3e3',
+                gunMetal: '#292F36',
+                sepia:'#704012',
+              },
         },
     },
 

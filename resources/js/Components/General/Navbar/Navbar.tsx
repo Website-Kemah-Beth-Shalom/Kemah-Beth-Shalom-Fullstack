@@ -1,73 +1,50 @@
-import React from 'react'
-import { styled } from '@stitches/react'
 import { Link, usePage } from '@inertiajs/react'
-// import variables from '@/styles/global.scss'
-import '@/styles/General/Navbar/Navbar.scss'
-import { PropsWithChildren } from 'react'
+import { useState } from 'react';
+import Logo from "../../../../../storage/app/public/logo-kemah-beth-shalom.png"
+import Burger from "../../../../../storage/app/public/btn-hamburger.svg" 
 
+export default function Navbar(){
+    const { url } = usePage();
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-const Route = [
-    {
-        name: 'Home',
-        path: '/'
-    },
-    {
-        name: 'Products',
-        path: '/product'
-    },
-    {
-        name: 'Contact',
-        path: '/contact'
-    }
-]
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+        console.log(isDropdownOpen);
+    };
 
-export default function Navbar({ companyname }: PropsWithChildren<{ companyname?: string }>) {
-    const PageInfo = usePage();
-    const [companyData, setCompanyData] = React.useState<any>(PageInfo?.props?.companyData)
-    return (
-        <div
-            className='Navbar'
-        >
-            <div
-                className='flex justify-center items-center p-5'
-            >
-                <Link
-                    className='w-20 h-8 justify-center items-center gap-2.5 inline-flex'
-                    href='/'
-                >
-                    <span
-                        className='text-center text-gray-200 text-2xl font-bold leading-loose'
+    return(
+        <div className='bg-oldLace text-gunMetal fixed w-full pt-8 pb-8'>
+            <div className='flex text-4xl justify-between items-center w-1/2 mx-auto gap-16'>
+                {/* <button onClick={toggleDropdown} className='absolute md:hidden left-16'>
+                    <img src={Burger} alt=""/>
+                </button> */}
+                <img src={Logo} alt="" />
+                <div className='hidden md:flex justify-around w-11/12'>
+                    <Link 
+                        href='/' 
+                        className={`${url === '/' ? 'font-bold' : ''}`}>
+                        Home
+                    </Link>
+                    <Link 
+                        href="/documentation"
+                        className={`${url === '/documentation' ? 'font-bold' : ''}`}
+                        >
+                        Dokumentasi
+                    </Link>
+                    <Link 
+                        href='/contact'
+                        className={`${url === '/contact' ? 'font-bold' : ''}`}
+                        >
+                        Kontak Kami
+                    </Link>
+                    <Link 
+                        href="/donation"
+                        className={`${url === '/donation' ? 'font-bold' : ''}`}
                     >
-                        {companyname ? companyname : companyData.company_name}
-                    </span>
-                </Link>
-                <div
-                    className='flex justify-between items-center gap-2.5'
-                >
+                    Donasi
+                    </Link>
                 </div>
-            </div>
-            <div
-                className='flex justify-between items-center p-10 gap-20'
-            >
-                {
-                    Route.map((route, index) => {
-                        return (
-                            <Link
-                                key={index}
-                                className='w-20 h-8 justify-center items-center gap-2.5 inline-flex
-                                bg-slate-50 rounded-xl p-2 text-black font-bold hover:bg-slate-500 
-                                hover:text-white transition duration-100 ease-in-out
-                                '
-                                href={route.path}
-                            >
-                                {route.name}
-                            </Link>
-                        )
-                    })
-                }
             </div>
         </div>
     )
 }
-
-// components:
