@@ -4,7 +4,7 @@ import { router } from '@inertiajs/react'
 
 export default function LocationSection() {
     return (
-        <div>
+        <div className='box'>
             <h2 className='titleLocation'>Lokasi Kami</h2>
             <div className='containerMap'>
                 <iframe

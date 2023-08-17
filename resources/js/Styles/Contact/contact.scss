@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Jost';
+}
+
 body{
     background-color: white;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 .container{
@@ -15,7 +22,7 @@ body{
         height: 13.375rem;
         margin: 0px auto;
     }
-    
+
     .containerContact{
         position: relative;
         background-color: white;
@@ -29,6 +36,7 @@ body{
         display: flex;
     
         .infoContact{
+            overflow: hidden;
             position: relative;
             width: 27.4375rem;
             height: 40.4375rem;
@@ -60,6 +68,7 @@ body{
             h2{
                 font-size: 2rem;
                 margin-bottom: 1rem;
+                font-weight: bold;
             }
             
             p{
@@ -76,8 +85,12 @@ body{
                 border-radius: 50%;
                 background-color: white;
                 opacity: 10%;
+                transition: 300ms;
             }
-
+            .smallCircle:hover{
+                opacity: 15%;
+                scale: 1.05;
+            }
             .bigCircle{
                 position: absolute;
                 bottom: -5rem;
@@ -87,6 +100,11 @@ body{
                 border-radius: 50%;
                 background-color: white;
                 opacity: 10%;
+                transition: 300ms;
+            }
+            .bigCircle:hover{
+                opacity: 15%;
+                scale: 1.05;
             }
         }
         
@@ -122,7 +140,8 @@ body{
                         opacity: 70%;
                     }
                     input:focus{
-                        outline: red;
+                        box-shadow: none ;
+                        border-bottom: 2px solid black;
                     }
                     label:focus-within {
                         font-size: 0.9rem;
@@ -161,6 +180,14 @@ body{
                         min-height: 6.3125rem;
                         resize: none;
                     }
+                    textarea::placeholder{
+                        color: #8D8D8D;
+                        font-weight: normal;
+                    }
+                    textarea:focus{
+                        box-shadow: none;
+                        border: 2px solid black;
+                    }
                 }
 
                 button{
@@ -188,13 +215,14 @@ body{
     }
 
     .containerLocation{
-        color: black;
+        color: #434343;
         font-size: 4rem;
         font-weight: bold;
         width: 70rem;
         margin: auto;
 
         .containerMap{
+            margin-top: 1.5rem;
             width: 70rem;
             height: 40.125rem;
             position: relative;
@@ -312,12 +340,16 @@ body{
         }
 
         .containerLocation{
+            width: fit-content!important;
+            .box{
+                width: fit-content;
+            }
             .titleLocation{
-                border: 2px solid red;
                 color: #434343;
                 font-size: 2.5rem;
                 margin: 0px auto !important;
-            }
+                width : fit-content !important;
+            }   
 
             .containerMap{
                 width: 22.75rem !important;
