@@ -11,7 +11,7 @@ export default function ProductCard({ ProductData }: PageProps<{ ProductData: an
             <h1
                 className='text-2xl'
             >{ProductData.title}</h1>
-
+            
             {ProductData.image
                 &&
                 <img

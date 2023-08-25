@@ -1,5 +1,4 @@
-import { usePage } from '@inertiajs/react'
-
+import { Link, usePage } from '@inertiajs/react';
 //images
 import FooterLogo from "../../../../storage/app/public/logo-footer.png"
 import Instagram from "../../../../storage/app/public/sosmed/instagram.svg"
@@ -9,11 +8,21 @@ import Youtube from "../../../../storage/app/public/sosmed/youtube.svg"
 export default function Footer() {
     return (
         <div className='bg-oldLace text-gunMetal pt-12 w-full'>
-            <div className='bg-white flex w-1/2 mx-auto text-3xl justify-between rounded-full pt-8 pb-8 pr-12 pl-12' >
-                <h1 className='p-4'>Home</h1>
-                <h1 className='p-4'>Dokumentasi</h1>
-                <h1 className='p-4'>Kontak Kami</h1>
-                <button className='bg-sepia text-white p-4 rounded-lg items-center'>Donasi</button>
+            <div className='bg-white flex w-7/12 mx-auto text-3xl justify-between rounded-full pt-8 pb-8 px-16 ' >                                 
+                <div className='flex gap-12'>
+                    <Link href='/' className={`my-8 `}>
+                        Home
+                    </Link>
+                    <Link href='/documentation' className={`my-8 `}>
+                        Dokumentasi
+                    </Link>
+                    <Link href='/contact' className={`my-8 `}>
+                        Kontak Kami
+                    </Link>
+                </div>
+                <Link href='/donation' className={`my-4 bg-sepia text-white pt-4 pb-4 pr-8 pl-8 rounded-lg items-center `}>
+                    Donasi
+                </Link>
             </div>
             <div className='flex justify-center mt-12 gap-12'>
                 <img src={Instagram} alt="instagram logo" className='w-16'/>
