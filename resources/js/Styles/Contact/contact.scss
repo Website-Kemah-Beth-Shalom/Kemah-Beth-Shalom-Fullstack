@@ -122,6 +122,7 @@ body{
                     border-top: none;
                     border-left: none;
                     border-right: none;
+                    box-shadow: none;
                     padding-left: 0px;
                 }
     
@@ -138,6 +139,7 @@ body{
                         color: #8D8D8D;
                         font-size: 0.875rem;
                         opacity: 70%;
+                        font-weight: normal;
                     }
                     input:focus{
                         box-shadow: none ;
@@ -148,7 +150,7 @@ body{
                         font-weight: bold;
                     }
                     input{
-                        font-weight: bold;
+                        font-weight:500;
                         width: 90%;
                     }
                 }
@@ -176,7 +178,7 @@ body{
                     height: 100px;
                     textarea{
                         width: 100%;
-                        overflow: hidden;
+                        overflow:auto;
                         min-height: 6.3125rem;
                         resize: none;
                     }
