@@ -5,6 +5,7 @@ import React, { useEffect } from 'react'
 import { useForm } from '@inertiajs/react'
 import { router } from '@inertiajs/react'
 
+
 const Card = (webconfig: any) => {
     const { data, setData, post, processing, errors } = useForm({
         id: webconfig.id,
@@ -89,6 +90,8 @@ export default function TestingPage({ webconfigs }: PageProps<{ webconfigs: any 
                     )
                 })
             }
+            
         </div>
     )
 }
+
