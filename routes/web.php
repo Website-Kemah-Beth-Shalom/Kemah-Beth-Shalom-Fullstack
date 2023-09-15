@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\WebconfigController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -58,10 +59,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// deva
+Route::get('/admin/testimonies/add', [TestimoniController::class, 'create'])->name('testimoni.add');
 
-// fallback route
-// Route::fallback(function () {
-//     return redirect('/');
-// });
+// Route::get('/admin/testimonies', [TestimoniController::class, 'index'])->name('admin');
+// Route::post('/admin/testimoni', [TestimoniController::class, 'update'])->name('admin.update.testimonies');
+// Route::post('/admin/testimonies', [ProductController::class, 'AddProduct'])->name('admin.add');
+
+// percobaan 2
+Route::get('/testimonials', [TestimoniController::class, 'index'])->name('testi');
+Route::post('/testimonials', [TestimoniController::class, 'store'])->name('testi.add');
+Route::post('/testimonials/{id}', [TestimoniController::class, 'update'])->name('testi.update');
+Route::delete('/testimonials/{id}', [TestimoniController::class, 'destroy']);
+
+Route::resource('/admin/testimonies', TestimoniController::class);
+
+
 
 require __DIR__ . '/auth.php';
