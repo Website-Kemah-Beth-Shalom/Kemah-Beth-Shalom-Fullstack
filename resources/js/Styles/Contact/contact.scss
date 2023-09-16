@@ -11,6 +11,7 @@ body{
 }
 
 .container{
+    
     margin: 0px auto;
     box-sizing: border-box;
     padding: 75px;
@@ -261,6 +262,23 @@ body{
         }
     }
 }    
+
+//tablet styling
+@media (max-width:688px){
+    body{
+        .containerContact{
+            width: 50rem!important
+        }
+
+        .containerLocation{
+            width: 50rem !important;
+
+            .containerMap{
+                width: 50rem !important;
+            }
+        }
+    }
+}
 
 //mobile styling
 @media (max-width:415px){
