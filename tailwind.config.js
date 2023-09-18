@@ -19,6 +19,7 @@ export default {
                 oldLace: '#fff3e3',
                 gunMetal: '#292F36',
                 sepia:'#704012',
+                gold:'#B88E2F',
               },
         },
     },
