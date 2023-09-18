@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebconfigController;
+use App\Http\Controllers\DocumentationController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,6 +37,7 @@ Route::get('/contact', ContactController::class)->name('contact');
 Route::get('/product', ProductController::class)->name('product');
 Route::get('/product/{slug}', [ProductController::class, 'ProductDetail'])->name('product.detail');
 Route::get('/testing', WebconfigController::class)->name('testing');
+Route::get('/documentation', DocumentationController::class)->name('documentation');
 Route::post('/admin/webconfig', [WebconfigController::class, 'UpdateWebconfig'])->name('admin.webconfig.update');
 // Route::get('news', NewsController::class)->name('news');
 
