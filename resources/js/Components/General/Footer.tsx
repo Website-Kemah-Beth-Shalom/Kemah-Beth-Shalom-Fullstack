@@ -7,7 +7,7 @@ import Youtube from "../../../../storage/app/public/sosmed/youtube.svg"
 
 export default function Footer() {
     return (
-        <div className='bg-oldLace text-gunMetal pt-12 w-full'>
+        <div className='bg-oldLace text-gunMetal pt-12 w-full mt-auto'>
             <div className='bg-white flex flex-col md:flex-row md:w-7/12 md:mx-auto md:text-3xl justify-between rounded-[30px] md:rounded-full md:pt-8 md:pb-8 md:px-16 mx-12 py-8' >                                 
                 <div className='flex md:gap-12 flex-col md:flex-row mx-auto md:m-0 text-center'>
                     <Link href='/' className={`my-8 `}>

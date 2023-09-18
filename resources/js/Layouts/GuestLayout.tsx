@@ -12,12 +12,12 @@ type Props = {
 
 export default function Guest({ companyname, children }: PropsWithChildren<{ companyname?: string, children?: React.ReactNode }>) {
     return (
-        <>
+        <div className='flex flex-col min-h-screen mt-auto'>
             <Navbar/>
             <div>
                 {children}
             </div>
             <Footer/>
-        </>
+        </div>
     );
 }
