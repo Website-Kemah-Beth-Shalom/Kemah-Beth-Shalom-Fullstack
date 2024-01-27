@@ -41,6 +41,7 @@ export default {
                 secondary: "#FFF3E3",
                 accent: "#B88E2F",
                 dark: "#292F36",
+                brown: "#704012",
                 primaryWhite: "#F9F5F2",
                 white: "#FFFFFF",
                 green: "#198754",
