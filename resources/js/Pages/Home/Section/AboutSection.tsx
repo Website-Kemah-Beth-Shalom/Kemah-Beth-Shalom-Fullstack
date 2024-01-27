@@ -60,16 +60,19 @@ function AboutSection() {
                 </div>
                 <div className="relative isolate">
                     <Image
+                        src={companyData?.about_vision_image_first}
                         className="rounded-full w-[20rem] xl:w-[30rem]
                         object-cover aspect-square"
                         alt=""
                     />
                     <Image
+                        src={companyData?.about_vision_image_second}
                         className="rounded-full object-cover aspect-square w-[5rem] xl:w-[10rem]
                     absolute top-[0%] left-[-15%]  
                     z-10"
                     />
                     <Image
+                        src={companyData?.about_vision_image_third}
                         className="rounded-full object-cover aspect-square w-[10rem]
                     absolute bottom-[-20%] right-[-20%]  
                     z-10"
@@ -229,9 +232,7 @@ function AboutSection() {
 
             <div className="flex items-center justify-center w-full bg-secondary">
                 <SectionContainer className="flex flex-col md:flex-row items-center justify-center gap-[0.5rem] text-center py-boxMd">
-                    <div
-                    className="h-full w-full"
-                    >
+                    <div className="h-full w-full">
                         <Image
                             src={companyData?.about_aniversary_image}
                             className="aspect-square object-cover
