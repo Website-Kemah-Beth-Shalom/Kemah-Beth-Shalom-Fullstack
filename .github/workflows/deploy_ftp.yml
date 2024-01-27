@@ -32,5 +32,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: /testing.renara.biz.id/
+          server-dir: /kemahbethshalom.renara.biz.id/
           exclude: .git* .env* .github* .gitignore node_modules/
