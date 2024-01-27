@@ -18,7 +18,7 @@ function AboutSection() {
             {/* Siapa Kami */}
             <SectionContainer
                 className="flex flex-col items-center justify-center text-center gap-2 bg-primary w-full
-            px-boxMd py-[1.5rem]"
+            px-boxS py-[1.5rem]"
             >
                 <h1 className="text-accent font-jost font-[900] text-[2.2rem]">
                     {companyData?.about_who_us_title}
@@ -44,7 +44,7 @@ function AboutSection() {
             <SectionContainer
                 className="
                 flex flex-col xl:flex-row items-center justify-center gap-[3rem] xl:gap-2 bg-primary w-full
-            px-boxMd py-[1.5rem] my-[2.5rem]"
+            px-boxS py-[1.5rem] my-[2.5rem]"
             >
                 <div className="flex flex-col items-center justify-center text-center gap-2 w-full">
                     <h1 className="text-accent font-jost font-[900] text-[2.2rem] w-full text-left">
@@ -85,7 +85,7 @@ function AboutSection() {
                 className="flex flex-col-reverse 
                 md:flex-row
                 items-center justify-center gap-2 bg-primary w-full
-                px-boxMd py-[1.5rem] my-[2.5rem]"
+                px-boxS py-[1.5rem] my-[2.5rem]"
             >
                 <div className="relative isolate w-full">
                     <Image
@@ -98,8 +98,7 @@ function AboutSection() {
                 {/* right side of "Misi Kami section" */}
                 <div
                     className="flex flex-col items-center justify-center text-center gap-2 w-full
-                px-boxMd py-[1.5rem] my-[2.5rem]
-                "
+                    md:px-boxMd py-[1.5rem] my-[2.5rem]"
                 >
                     <h1 className="text-accent font-jost font-[900] text-[2.2rem] w-full text-left">
                         {companyData?.about_mission_title}
@@ -114,13 +113,17 @@ function AboutSection() {
             <div className="bg-secondary w-full flex items-center justify-center">
                 <SectionContainer
                     className="flex flex-col md:flex-row items-center justify-between text-center gap-[2rem] bg-secondary
-                py-[1.5rem] my-[2.5rem]"
+                    px-boxS py-[1.5rem] my-[2.5rem]"
                 >
                     <div className="flex flex-col items-start justify-start text-center gap-2">
-                        <h1 className="text-accent font-jost font-[800] text-[3rem] w-full text-center md:text-left">
+                        <h1 className="text-accent font-jost font-[800] text-[2.5rem] w-full text-center md:text-left">
                             {companyData?.about_how_we_serve_title}
                         </h1>
-                        <p className="font-jost text-[1.125rem] text-center md:text-left line-clamp-6">
+                        <p
+                            className="font-jost 
+                        text-[1.125rem]
+                        text-center md:text-left line-clamp-6"
+                        >
                             {companyData?.about_how_we_serve_description}
                         </p>
                         <Link
@@ -149,7 +152,7 @@ function AboutSection() {
             </div>
 
             {/* Donation */}
-            <div className="flex flex-col items-center justify-center gap-[1rem] text-center p-boxMd bg-dark">
+            <div className="flex flex-col items-center justify-center gap-[1rem] text-center p-boxMd w-full bg-dark">
                 <SectionContainer className="flex flex-col items-center justify-center gap-[1rem] text-center bg-dark">
                     <h1 className="text-white text-[2.5rem] font-merriweather ">
                         {companyData?.about_donation_title}
@@ -196,7 +199,7 @@ function AboutSection() {
             <SectionContainer
                 className="
             grid grid-cols-1 md:grid-cols-2
-            items-center justify-center gap-[1rem] text-center py-boxMd"
+            items-center justify-center gap-[1rem] text-center py-boxMd px-boxS"
             >
                 <div>
                     <h1
@@ -232,7 +235,7 @@ function AboutSection() {
             {/* Aniversary */}
 
             <div className="flex items-center justify-center w-full bg-secondary">
-                <SectionContainer className="flex flex-col md:flex-row items-center justify-center gap-[0.5rem] text-center py-boxMd">
+                <SectionContainer className="flex flex-col md:flex-row items-center justify-center gap-[0.5rem] text-center py-boxMd px-boxS">
                     <div className="h-full w-full">
                         <Image
                             src={companyData?.about_aniversary_image}
@@ -246,7 +249,7 @@ function AboutSection() {
                         <h1 className="text-dark font-jost font-[900] text-[2.2rem] w-full text-center md:text-left">
                             {companyData?.about_aniversary_title}
                         </h1>
-                        <p className="whitespace-pre-wrap text-center md:text-left w-full">
+                        <p className="whitespace-pre-wrap text-center md:text-left w-full font-jost">
                             {companyData?.about_aniversary_description}
                         </p>
                     </div>
@@ -254,7 +257,7 @@ function AboutSection() {
             </div>
 
             {/* Location */}
-            <SectionContainer className="flex flex-col items-center justify-center gap-[1rem] text-center py-boxMd bg-primary w-full">
+            <SectionContainer className="flex flex-col items-center justify-center gap-[1rem] text-center py-boxMd bg-primary w-full px-boxS">
                 <h1 className="text-dark font-jost font-[800] text-[2.2rem] w-full text-left">
                     {companyData?.about_location_title}
                 </h1>
