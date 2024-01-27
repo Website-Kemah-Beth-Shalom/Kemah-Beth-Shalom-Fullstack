@@ -29,12 +29,12 @@ function AboutSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[1rem]">
                     <Image
                         className="aspect-square object-cover rounded-xl"
-                        src={aboutImage}
+                        src={companyData?.about_who_us_image_first}
                         alt=""
                     />
                     <Image
                         className="aspect-square object-cover rounded-xl"
-                        src={companyData?.about_who_us_image}
+                        src={companyData?.about_who_us_image_second}
                         alt=""
                     />
                 </div>
@@ -89,6 +89,7 @@ function AboutSection() {
             >
                 <div className="relative isolate w-full">
                     <Image
+                        src={companyData?.about_mission_image_first}
                         className="rounded-3xl object-cover aspect-square"
                         alt=""
                     />
