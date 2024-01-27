@@ -1,0 +1,20 @@
+.layout-container {
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+    opacity: 1 !important;
+    background-color: background1 !important;
+
+    &::before {
+        // isolation: isolate;
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        // background: url('./Assets/natural-paper.png') repeat;
+        background-size: contain;
+        z-index: -1;
+    }
+}

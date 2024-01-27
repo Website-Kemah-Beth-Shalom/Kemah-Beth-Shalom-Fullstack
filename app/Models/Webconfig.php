@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Webconfig extends Model
 {
@@ -21,8 +24,31 @@ class Webconfig extends Model
     ];
 
     public $timestamps = true;
-    
-    public function getAllData()//with caching
+
+    // help to make date formated better
+    public $casts = [
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+    ];
+
+    protected function value(): Attribute
+    {
+        return Attribute::make(
+            // convert value to storage link
+            get: function () {
+                // if ($this->type == 'image') {
+                //     return Storage::url($this->attributes['value']);
+                // } else
+                if ($this->type == 'file') {
+                    return Storage::url($this->attributes['value']);
+                } else {
+                    return $this->attributes['value'];
+                }
+            }
+        );
+    }
+
+    public function getAllData() //with caching
     {
         $key = 'webconfig';
         $webconfig  = new \App\Models\Webconfig();
@@ -47,7 +73,6 @@ class Webconfig extends Model
         $webconfigdata = [];
         foreach ($webconfig as $key => $value) {
             $webconfigdata[$value->title] = $value->value;
-            // $webconfigdata[$value->category][$value->title] = $value-pro>value;
         }
         return $webconfigdata;
     }

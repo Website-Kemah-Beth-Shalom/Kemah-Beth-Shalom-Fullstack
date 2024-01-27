@@ -2,7 +2,7 @@ import { useEffect, FormEventHandler } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
+// import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/react';
 
@@ -80,9 +80,16 @@ export default function ResetPassword({ token, email }: { token: string, email: 
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" disabled={processing}>
+                    {/* <PrimaryButton className="ml-4" disabled={processing}>
                         Reset Password
-                    </PrimaryButton>
+                    </PrimaryButton> */}
+                    <button
+                        type="submit"
+                        disabled={processing}
+                        className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primaryHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primaryActive"
+                    >
+                        Reset Password
+                    </button>
                 </div>
             </form>
         </GuestLayout>

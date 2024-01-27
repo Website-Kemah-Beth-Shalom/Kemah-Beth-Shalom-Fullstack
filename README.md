@@ -21,13 +21,22 @@ yarn build (in local)
 <!-- zip everything but node modules & vendor -->
 <!-- use filezilla to transfer file -->
 composer install
+cp .env.example .env
 php artisan migrate
 php artisan migrate:fresh --seed --seeder=CallAllSeeder
 php artisan route:cache 
 <!-- trigger storage link ini shared hosting -->
-ln -s ../storage/app/public storage
+(delete storage folder on public)
+ln -s ../storage/app/public storage (on public dir)
 <!--  -->
+
+<!-- [Common Error] -->
+1. Image not showing at deployment (forbiden):
+chmod 777 public/storage 
 
 
 <!-- Referensi -->
 1. Send Email : https://www.youtube.com/watch?v=XywB2qtzSoM
+2. Middleware Auth : https://www.youtube.com/watch?v=vc4sXOdE4bQ
+3. Generate sitemap : https://learn2torials.com/a/generate-dynamic-sitemap-in-laravel
+4. Generate sitemap : https://laraveltuts.com/how-to-automatically-generate-an-xml-sitemap-in-laravel/

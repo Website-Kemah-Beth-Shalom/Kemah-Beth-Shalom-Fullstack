@@ -13,9 +13,14 @@ class CallAllSeeder extends Seeder
         $this->call([
             WebconfigSeeder::class,
             // ProductSeeder::class,
-            // UserSeeder::class,
+            ImageSeeder::class,
+            UserSeeder::class,
+            // TestimonySeeder::class,
+            // MessageSeeder::class,
             // PostSeeder::class,
             // CommentSeeder::class,
+            CalculationSeeder::class,
+            // BlogSeeder::class,
         ]);
     }
 }
