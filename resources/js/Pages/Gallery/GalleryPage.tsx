@@ -20,17 +20,30 @@ export default function GalleryPage({
                 <title>Gallery</title>
             </Head>
             <Guest>
-                <SectionContainer className="flex flex-col items-center justify-center text-center p-boxS">
-                    <h1 className="text-accent font-jost font-[700] text-[2.2rem]">
-                        {companyData?.gallery_title}
-                    </h1>
-                    <p>{companyData?.gallery_description}</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {images.data.map((image: ImageProps) => (
-                            <GalleryCard key={image.id} image={image} />
-                        ))}
-                    </div>
-                </SectionContainer>
+                <div
+                    className="w-full
+                flex flex-col items-center justify-center
+                py-boxMd
+                "
+                >
+                    <SectionContainer
+                        className="flex 
+                    flex-col
+                    items-center justify-center
+                    gap-4
+                    "
+                    >
+                        <h1 className="text-accent font-jost font-[700] text-[2.2rem]">
+                            {companyData?.gallery_title}
+                        </h1>
+                        <p>{companyData?.gallery_description}</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {images.data.map((image: ImageProps) => (
+                                <GalleryCard key={image.id} image={image} />
+                            ))}
+                        </div>
+                    </SectionContainer>
+                </div>
             </Guest>
         </>
     );
@@ -58,7 +71,7 @@ const GalleryCard = ({ image }: { image: ImageProps }) => {
                 p-boxS text-left
                 "
             >
-                {image.title}
+                {/* {image.title} */}
             </h1>
             <p>{image.updated_at} </p>
         </div>
