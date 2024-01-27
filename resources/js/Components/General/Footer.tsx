@@ -66,7 +66,7 @@ export default function Footer() {
                 "
                 >
                     <div
-                        className="text-dark font-jost font-[400] text-[1.2rem] w-full text-center
+                        className="text-dark font-jost font-[400] text-[1rem] w-full text-center
                     order-1 md:order-1
                     "
                     >
@@ -79,7 +79,7 @@ export default function Footer() {
                         <ApplicationLogo />
                     </div>
                     <div
-                        className="text-dark font-jost font-[400] text-[1.2rem] w-full text-center
+                        className="text-dark font-jost font-[400] text-[1rem] w-full text-center
                     order-2 md:order-3
                     "
                     >

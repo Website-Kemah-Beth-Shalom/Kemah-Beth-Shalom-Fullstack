@@ -44,7 +44,8 @@ function AboutSection() {
             <SectionContainer
                 className="
                 flex flex-col xl:flex-row items-center justify-center gap-[3rem] xl:gap-2 bg-primary w-full
-            px-boxS py-[1.5rem] my-[2.5rem]"
+            px-boxS py-[1.5rem] my-[2.5rem]
+            "
             >
                 <div className="flex flex-col items-center justify-center text-center gap-2 w-full">
                     <h1 className="text-accent font-jost font-[900] text-[2.2rem] w-full text-left">
@@ -74,7 +75,7 @@ function AboutSection() {
                     <Image
                         src={companyData?.about_vision_image_third}
                         className="rounded-full object-cover aspect-square w-[10rem]
-                    absolute bottom-[-20%] right-[-20%]  
+                    absolute bottom-[-20%] right-[-10%]  
                     z-10"
                     />
                 </div>
@@ -122,7 +123,7 @@ function AboutSection() {
                         <p
                             className="font-jost 
                         text-[1.125rem]
-                        text-center md:text-left line-clamp-6"
+                        text-center md:text-left"
                         >
                             {companyData?.about_how_we_serve_description}
                         </p>
