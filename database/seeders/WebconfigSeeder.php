@@ -30,7 +30,7 @@ class WebconfigSeeder extends Seeder
                 'title' => 'url',
                 'alias' => 'Domain Web Perusahaan',
                 'type' => 'text',
-                'value' => 'https://homikuliving.com/',
+                'value' => 'https://kemahbethshalom.renara.biz.id/',
             ],
             [
                 'category' => 'general',
@@ -359,6 +359,13 @@ class WebconfigSeeder extends Seeder
             ],
             [
                 'category' => 'home',
+                'title' => 'about_vision_image_third',
+                'alias' => 'Gambar Ketiga Visi Halaman About',
+                'type' => 'image',
+                'value' => 'https://picsum.photos/1920/1080',
+            ],
+            [
+                'category' => 'home',
                 'title' => 'about_mission_title',
                 'alias' => 'Judul Misi Halaman About',
                 'type' => 'text',
@@ -401,15 +408,8 @@ class WebconfigSeeder extends Seeder
             ],
             [
                 'category' => 'home',
-                'title' => 'about_how_we_serve_image_first',
+                'title' => 'about_how_we_serve_image',
                 'alias' => 'Gambar Pertama How We Serve Halaman About',
-                'type' => 'image',
-                'value' => 'https://picsum.photos/1920/1080',
-            ],
-            [
-                'category' => 'home',
-                'title' => 'about_how_we_serve_image_second',
-                'alias' => 'Gambar Kedua How We Serve Halaman About',
                 'type' => 'image',
                 'value' => 'https://picsum.photos/1920/1080',
             ],
