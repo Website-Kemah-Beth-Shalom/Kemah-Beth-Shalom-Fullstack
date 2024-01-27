@@ -168,6 +168,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // intervention image
+        Intervention\Image\ImageServiceProvider::class,
         // App\Providers\TelescopeServiceProvider::class,
     ])->toArray(),
 
@@ -184,6 +186,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'ImageIntervention' => Intervention\Image\Facades\Image::class,
+        // to use: ImageIntervention::make($image)->resize(300, 200)->save($path);
     ])->toArray(),
 
 ];

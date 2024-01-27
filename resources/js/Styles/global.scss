@@ -1,27 +1,140 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Niramit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 // color
-$primaryColor: #012622;
-$secondaryColor: #353535;
-$tertiaryColor: #333333;
-$fontPrimaryColor: #FFFFFF;
-$fontSecondaryColor: #ffffff;
-
+$background1: #F8F6F3;
+$background2: #F3F0EB;
+$text1: #171414;
+$text2: #424242;
+$text3: #9D7C5D;
+$deco1: #AD9B87;
+$deco2: #D3C6B4;
+$adminPrimaryColor: #ffffff;
+$adminSecondaryColor: #353535;
 // font
 
 $globalBorder: 0.1rem solid rgb(255, 46, 46);
 
 :export {
-    primaryColor: $primaryColor;
-    secondaryColor: $secondaryColor;
-    tertiaryColor: $tertiaryColor;
+    background1: $background1;
+    background2: $background2;
+    text1: $text1;
+    text2: $text2;
+    text3: $text3;
+    deco1: $deco1;
+    deco2: $deco2;
 }
 
+body {
+    margin-bottom: 0px !important;
+}
 
 :root {
-    font-size: 62.5%;
-    background-color: $primaryColor;
-    color: $primaryColor;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: $background1;
+    color: $text1;
+    margin-bottom: 0px !important;
+
+    //set scrollbar like joshcomeau.com
+    scrollbar-width: thin;
+    scrollbar-color: $deco2 $background2;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $deco2;
+        border-radius: 0.5rem;
+
+    }
+
+    ::selection {
+        background: #9D7C5D;
+        color: #ffffff;
+    }
+
+    ::-moz-selection {
+        background: #9D7C5D;
+        color: #ffffff;
+    }
+
+
+    .btn {
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.4rem 1.2rem;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+        }
+    }
+
+    .animate_spin {
+        -webkit-animation: spin 4s linear infinite;
+        -moz-animation: spin 4s linear infinite;
+        animation: spin 4s linear infinite;
+
+        @-moz-keyframes spin {
+            100% {
+                -moz-transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+
+.AdminColor {
+    background-color: $adminPrimaryColor;
+    color: $adminSecondaryColor;
+}
+
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: $deco2 $background2;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $deco2;
+        border-radius: 0.5rem;
+
+    }
 }

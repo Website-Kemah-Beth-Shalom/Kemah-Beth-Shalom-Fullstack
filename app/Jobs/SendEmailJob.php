@@ -22,9 +22,14 @@ class SendEmailJob implements ShouldQueue
         $this->data = $data;
     }
 
+
     public function handle(): void
     {
-        $email = new SendMail();
-        Mail::to($this->data['email'])->send($email);
+        $email = new SendMail($this->data);
+        try {
+            Mail::to($this->data['email'])->send($email);
+        } catch (\Exception $e) {
+            dd($e);
+        }
     }
 }

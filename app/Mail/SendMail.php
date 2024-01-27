@@ -13,12 +13,13 @@ class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
-    public function __construct()
+    private $data = [
+        'title' => 'Message from Homiku Living',
+        'body' => 'Thank you for your message. We will reply to your message as soon as possible.'
+    ];
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -27,7 +28,7 @@ class SendMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Send Mail',
+            subject: $this->data['subject'],
         );
     }
 
@@ -36,13 +37,10 @@ class SendMail extends Mailable
      */
     public function content(): Content
     {
-        $data = [
-            'title' => 'Mail from ItSolutionStuff.com',
-            'body' => 'This is for testing email using smtp'
-        ];
+
         return new Content(
             view: 'emails.template_email',
-            with: $data,
+            with: $this->data,
         );
     }
 

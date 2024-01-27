@@ -37,7 +37,7 @@ class HandleInertiaRequests extends Middleware
         // for webconfig caching data
         $webconfig = new Webconfig();
         $webconfig = $webconfig->getAllData();
-
+        
         return array_merge(parent::share($request), [
             'companyData' => $webconfig,
             'auth' => [

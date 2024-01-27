@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->string('alias');
             $table->string('type');
-            $table->string('value');
+            $table->text('value');
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

@@ -1,0 +1,231 @@
+.TextEditor {
+    border-radius: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+
+
+    &::selection {
+        background: #00fbff !important;
+        color: #000 !important;
+    }
+
+    .content-editor {
+        background: #f0f3f5;
+        color: #303030;
+        width: 100%;
+        border: none;
+        padding: 1rem;
+        padding-bottom: 10rem !important;
+        pointer-events: all;
+
+        &.expanded {
+            padding-inline: 4rem;
+            padding-block: 3rem;
+            min-height: 100%;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid rgba(#000000, 0.3);
+            margin: 2rem 0;
+        }
+    }
+
+
+    .content-preview {
+        color: #d6d6d6;
+        width: 100%;
+        border: none;
+        padding: 0.2rem;
+
+        hr {
+            border: none;
+            border-top: 2px solid rgba(#ffffff, 0.3);
+            margin: 2rem 0;
+        }
+    }
+
+    .menu-bar {
+        width: 100%;
+        padding: 0.1rem;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        //prevent selection of text
+        user-select: none;
+        pointer-events: all !important;
+
+        .button {
+            color: #000;
+            outline: none;
+            padding: 0.2rem;
+            border: 1px solid #000;
+            background: none;
+            margin: 0.2rem 0.2rem;
+            cursor: pointer;
+            font-family: "JetBrainsMono", monospace;
+            font-size: 1rem;
+            pointer-events: all;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                transform: translateY(-2px);
+                scale: 1.1;
+            }
+        }
+    }
+
+
+
+
+    &.expanded {
+        .menu-bar {
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+
+    .tags {
+        width: 100%;
+        height: 1.5rem;
+        margin: 1rem 0;
+        padding: 0.2rem;
+        border: none;
+        border-bottom: 1px solid #000;
+        outline: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: all 0.3s ease-in-out;
+
+        &:focus {
+            border-bottom: 1px solid #00fbff;
+        }
+    }
+
+    .preview-btn {
+        border: none;
+        outline: none;
+        padding: 0.2rem;
+        background: #76f329a4;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    /* Basic editor styles */
+    .ProseMirror {
+        >*+* {
+            margin-top: 0.75em;
+        }
+
+        outline: none;
+
+        ul {
+            padding: 0 1rem;
+            list-style: disc;
+        }
+
+        ol {
+            counter-reset: cupcake;
+            // padding: 0 0rem;
+        }
+
+        ol li {
+            counter-increment: cupcake;
+            display: flex;
+        }
+
+        ol li:before {
+            content: counters(cupcake, '.') '. ';
+            /* Whatever custom styles you want here */
+            // color: hotpink;
+            // font-weight: bold;
+            // font-family: cursive;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        h6 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+
+
+        pre {
+            background: #3c3c3c;
+            color: #FFF;
+            font-family: 'JetBrainsMono', monospace;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+
+            code {
+                // color: inherit;
+                padding: 0;
+                background: none;
+                font-size: 0.8rem;
+            }
+        }
+
+        img {
+            display: block;
+            width: 85%;
+            height: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0.5rem;
+            object-fit: cover;
+        }
+
+        blockquote {
+            padding-left: 1rem;
+            border-left: 2px solid rgba(#0D0D0D, 0.1);
+        }
+    }
+
+
+    a {
+        color: #080fc7;
+        text-decoration: none;
+        border-bottom: 1px solid #080fc7;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+    }
+}

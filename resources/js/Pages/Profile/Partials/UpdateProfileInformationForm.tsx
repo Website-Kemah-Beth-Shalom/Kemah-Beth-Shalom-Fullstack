@@ -1,11 +1,12 @@
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
+// import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Link, useForm, usePage } from '@inertiajs/react';
 import { Transition } from '@headlessui/react';
 import { FormEventHandler } from 'react';
 import { PageProps } from '@/types';
+import AdminLayout from '@/Layouts/AdminLayout';
 
 export default function UpdateProfileInformation({ mustVerifyEmail, status, className = '' }: { mustVerifyEmail: boolean, status?: string, className?: string }) {
     const user = usePage<PageProps>().props.auth.user;
@@ -22,22 +23,20 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
     };
 
     return (
-        <section className={className}>
+        <AdminLayout>
             <header>
                 <h2 className="text-lg font-medium text-gray-900">Profile Information</h2>
-
                 <p className="mt-1 text-sm text-gray-600">
                     Update your account's profile information and email address.
                 </p>
             </header>
-
             <form onSubmit={submit} className="mt-6 space-y-6">
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
 
                     <TextInput
                         id="name"
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full text-black"
                         value={data.name}
                         onChange={(e) => setData('name', e.target.value)}
                         required
@@ -54,7 +53,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                     <TextInput
                         id="email"
                         type="email"
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full text-black"
                         value={data.email}
                         onChange={(e) => setData('email', e.target.value)}
                         required
@@ -87,7 +86,13 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                 )}
 
                 <div className="flex items-center gap-4">
-                    <PrimaryButton disabled={processing}>Save</PrimaryButton>
+                    <button
+                        type="submit"
+                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-primaryBlack border border-transparent rounded-md shadow-sm hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primaryBlack disabled:opacity-25 transition"
+                        disabled={processing}
+                    >
+                        Save
+                    </button>
 
                     <Transition
                         show={recentlySuccessful}
@@ -96,10 +101,10 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                         leave="transition ease-in-out"
                         leaveTo="opacity-0"
                     >
-                        <p className="text-sm text-gray-600">Saved.</p>
+                        <p className="text-sm text-green">Saved.</p>
                     </Transition>
                 </div>
             </form>
-        </section>
+        </AdminLayout>
     );
 }
