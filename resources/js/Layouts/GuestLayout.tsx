@@ -36,7 +36,6 @@ export default function Guest({
         const timeoutId = setTimeout(() => {
             setShowSplashScreen(false);
         }, 3000);
-
         // Clear the timeout if the component unmounts or if you want to cancel it for some reason
         return () => clearTimeout(timeoutId);
     }, []);

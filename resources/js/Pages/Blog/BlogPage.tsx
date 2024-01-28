@@ -35,13 +35,13 @@ export default function BlogPage({ Blogs, Preview }: any) {
             <div className="flex flex-col justify-center items-center gap-5 p-boxMd">
                 {/* Header */}
                 <div className="flex flex-col justify-center items-start gap-[0.5rem] p-boxS w-full">
-                    <h1 className="font-playfair text-[2.5rem] font-[500]">
+                    <h1 className="font-jost text-[3rem] text-accent font-bold ">
                         {companyData.blog_title}
                     </h1>
-                    <hr className="w-[30%] h-[0.1rem] bg-primaryBlack mb-[1rem]" />
+                    <hr className="w-[30%] h-[0.1rem] bg-accent mb-[1rem]" />
                     {/* Content */}
                     <p
-                        className="text-primaryBlack font-niramit w-full max-w-[60rem] text-[1.125rem]
+                        className="text-primaryBlack font-jost w-full max-w-[60rem] text-[1.125rem]
                         text-left"
                     >
                         {companyData.blog_description}
@@ -64,7 +64,7 @@ export default function BlogPage({ Blogs, Preview }: any) {
                     {/* Latest on Our blog  */}
                     <br />
                     <div className="w-full flex flex-col items-center gap-8">
-                        <h1 className="text-primaryBlack text-[2rem] font-[600] font-playfair w-full text-center">
+                        <h1 className="text-accent text-[2rem] font-[600] font-jost w-full text-center">
                             Latest on Our blog
                         </h1>
                         <div className="relative w-full md:w-[60vw]">
