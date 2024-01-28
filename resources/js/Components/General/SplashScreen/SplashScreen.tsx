@@ -19,9 +19,7 @@ function SplashScreen() {
             </svg>
 
             <div className="text-center text-text2 text-3xl md:text-4xl font-medium">
-                HOMIKU
-                <br />
-                LIVING
+                Kemah Beth Shalom
             </div>
         </div>
     );
