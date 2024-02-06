@@ -36,7 +36,6 @@ export default function Guest({
         const timeoutId = setTimeout(() => {
             setShowSplashScreen(false);
         }, 3000);
-
         // Clear the timeout if the component unmounts or if you want to cancel it for some reason
         return () => clearTimeout(timeoutId);
     }, []);
@@ -128,7 +127,7 @@ export default function Guest({
                                 ? "translate-y-[0rem] opacity-[100%]"
                                 : "translate-y-[-200%] opacity-[0%]") +
                             `md:hidden fixed top-[4.3rem] sm:top-[4.25rem] left-0 right-0 pt-[1rem] pb-[1.5rem] px-boxMd shadow-md
-                            bg-bg1 w-full z-[10] flex flex-col items-start text-center isolate gap-[0.5rem] transform-gpu transition-all duration-500 ease-in-out origin-top`
+                            bg-bg1 w-full z-[10] flex flex-col items-center text-center isolate gap-[0.5rem] transform-gpu transition-all duration-500 ease-in-out origin-top`
                         }
                     >
                         {Route.map((item, index) => (
@@ -140,10 +139,17 @@ export default function Guest({
                                 {item.name}
                             </NavLink>
                         ))}
+                        <a
+                            href={companyData?.company_donation_link}
+                            className="font-jost font-bold bg-brown text-white rounded-md w-full h-[2.5rem] p-boxS 
+                            my-[1rem] md:mb-0
+                        flex items-center justify-center
+                        "
+                        >
+                            Donasi
+                        </a>
                     </div>
-                    <main className="bg-bg1">
-                        {children}
-                    </main>
+                    <main className="bg-bg1">{children}</main>
                     {/* Footer */}
                     {footer ? <Footer /> : null}
                 </>
@@ -158,13 +164,9 @@ const Route = [
         path: "/",
         route: "home",
     },
+
     {
-        name: "Cost Calculator",
-        path: "/cost",
-        route: "cost",
-    },
-    {
-        name: "Gallery",
+        name: "Dokumentasi",
         path: "/gallery",
         route: "gallery",
     },

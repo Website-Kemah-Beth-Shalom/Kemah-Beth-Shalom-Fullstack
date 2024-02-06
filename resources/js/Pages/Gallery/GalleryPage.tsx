@@ -53,7 +53,7 @@ const GalleryCard = ({ image }: {  image: ImageProps }) => {
             <h1 className="absolute bottom-0 left-0 w-full text-white font-jost font-[700] text-[1.5rem]
                 p-boxS text-left"
             >
-                {image.title}
+                {/* {image.title} */}
             </h1>
             {/* <p>{image.updated_at}</p> */}
         </div>

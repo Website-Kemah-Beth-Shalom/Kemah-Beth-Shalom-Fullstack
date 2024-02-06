@@ -11,19 +11,14 @@ export default function SectionContainer({
     className,
 }: Props) {
     return (
-        <div
+        <section
             id={id}
             className={`
-            px-[1.5rem]
-            md:px-[2.25rem]
-            lg:px-[4.25rem]
-            xl:px-[6.25rem]
-            w-full
-            h-full
+            w-[90%] md:w-[80%] lg:w-[60%] max-w-[90%]
             ${className}
             `}
         >
             {children}
-        </div>
+        </section>
     );
 }

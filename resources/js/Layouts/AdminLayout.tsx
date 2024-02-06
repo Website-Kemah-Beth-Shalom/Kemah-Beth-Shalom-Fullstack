@@ -102,7 +102,7 @@ export default function AdminLayout({ header, children }: PropsWithChildren<{ he
                         <div
                             className='flex flex-col justify-start items-start w-full h-full gap-1'
                         >
-                            <Link
+                            {/* <Link
                                 href={'/admin/order'}
                                 className={`flex flex-row items-center justify-between
                             w-full h-[3rem] rounded-md outline-none
@@ -121,7 +121,7 @@ export default function AdminLayout({ header, children }: PropsWithChildren<{ he
                                     />
                                     Order
                                 </span>
-                            </Link>
+                            </Link> */}
                             {
                                 Route.map((item, index) => {
                                     return (
@@ -169,12 +169,12 @@ const Route = [
         route: 'webconfig',
         icon: 'https://www.svgrepo.com/show/378674/people-group.svg'
     },
-    {
-        name: ' Products',
-        path: '/admin/product',
-        route: 'product',
-        icon: 'https://www.svgrepo.com/show/422038/product.svg'
-    },
+    // {
+    //     name: ' Products',
+    //     path: '/admin/product',
+    //     route: 'product',
+    //     icon: 'https://www.svgrepo.com/show/422038/product.svg'
+    // },
     {
         name: 'Gallery',
         path: '/admin/gallery',
