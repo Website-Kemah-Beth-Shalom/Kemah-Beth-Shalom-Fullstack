@@ -39,7 +39,7 @@ export default function Footer() {
             {/* MAP AND CONTACT */}
             <div className="flex flex-col-reverse justify-center items-center md:flex-row gap-[2rem]">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.649014668097!2d106.69821117385915!3d-6.3097570617463985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5ff3690a2d1%3A0xa8a7d36a26e1d0b8!2sHomiku%20Living%20Workshop!5e0!3m2!1sen!2sid!4v1703773447961!5m2!1sen!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1507.5580918009696!2d106.68455109871387!3d-6.31128999218207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e52fad172ae1%3A0x2763c403f06effbe!2sPanti%20Jompo%20%26%20Panti%20Asuhan%20Kemah%20Beth%20Shalom!5e0!3m2!1sen!2sid!4v1706616053169!5m2!1sen!2sid"
                     className="
                     h-[45vw] md:h-[20vw] w-[70vw] md:w-[35vw] border-2 rounded-md border-deco2"
                     loading="lazy"

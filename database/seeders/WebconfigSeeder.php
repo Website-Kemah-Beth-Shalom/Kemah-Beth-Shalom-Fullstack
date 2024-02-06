@@ -51,7 +51,7 @@ class WebconfigSeeder extends Seeder
                 'title' => 'address',
                 'alias' => 'Alamat Perusahaan',
                 'type' => 'text',
-                'value' => 'Jalan PDAM Persatuan No.97, Ciater, Serpong',
+                'value' => 'Gang Mushola Nurul Amal Jalan Ciater Rawa Mekar Jaya No.14, Kecamatan Serpong, Kota Tangerang Selatan, Banten, Indonesia',
             ],
             [
                 'category' => 'general',
@@ -241,6 +241,13 @@ class WebconfigSeeder extends Seeder
             // Contact
             [
                 'category' => 'contact',
+                'title' => 'company_whatsapp_number',
+                'alias' => 'Nomor WhatsApp Perusahaan',
+                'type' => 'text',
+                'value' => '0877 7428 8670 (WA)',
+            ],
+            [
+                'category' => 'contact',
                 'title' => 'company_call_number',
                 'alias' => 'Nomor Telepon Perusahaan',
                 'type' => 'text',
@@ -251,7 +258,7 @@ class WebconfigSeeder extends Seeder
                 'title' => 'company_email',
                 'alias' => 'Alamat Email Perusahaan',
                 'type' => 'text',
-                'value' => 'company@gmail.com',
+                'value' => 'kemahbethshalom@gmail.com',
             ],
             [
                 'category' => 'contact',
