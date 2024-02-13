@@ -149,7 +149,23 @@ export default function Guest({
                             Donasi
                         </a>
                     </div>
-                    <main className="bg-bg1">{children}</main>
+                    <main className="bg-bg1">
+                    {children}
+                    
+                    {/* button whatsapp */}
+                    <a
+                        title="Hubungi kami lewat whatsapp!"
+                        href={`https://wa.me/${companyData?.company_whatsapp}`}
+                        className="fixed bottom-[3rem] right-[3rem] xl:bottom-[4rem] xl:right-[4rem] z-50 bg-green-500  transition-all duration-300 hover:bg-green-600 drop-shadow-lg rounded-full p-2"
+                        target="_blank"
+                    >
+                        <img
+                            src="https://www.svgrepo.com/show/176768/whatsapp-social-media.svg"
+                            alt="whatsapp"
+                            className="w-auto h-[5rem] xl:h-[7rem] p-2"
+                        />
+                    </a>
+                    </main>
                     {/* Footer */}
                     {footer ? <Footer /> : null}
                 </>

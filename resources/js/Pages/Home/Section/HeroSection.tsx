@@ -77,23 +77,12 @@ export default function HeroSection() {
                     gap-4
                     items-center justify-start"
                     >
-                        <a
-                            href={companyData?.company_donation_link}
-                            target="_blank"
-                            title="Pergi ke halaman donasi"
-                            className="bg-accent text-white rounded-xl p-boxS font-jost font-[700] text-[1.2rem] mr-2 h-[3.5rem] w-[13rem]
-                        flex items-center justify-center
-                        hover:bg-transparent hover:text-accent hover:border-accent border-[2px] transition-all duration-300
-                        cursor-pointer
-                        "
-                        >
-                            Donasi Sekarang
-                        </a>
+
                         <button
                             onClick={handleOpenModal}
                             title="Lihat ayat panti"
-                            className="bg-transparent border-accent border-[2px] text-accent rounded-xl font-jost font-[700] text-[1.2rem] mr-2
-                        hover:bg-accent hover:text-white transition-all duration-300 h-[3.5rem] w-[13rem] flex items-center justify-center
+                            className="border-accent border-[2px] text-white bg-accent rounded-xl font-jost font-[700] text-[1.2rem] mr-2
+                        hover:bg-transparent hover:text-accent transition-all duration-300 h-[3.5rem] w-[13rem] flex items-center justify-center
                         "
                         >
                             Ayat Panti
@@ -150,7 +139,7 @@ export default function HeroSection() {
                             {companyData?.home_hero_verse_title}
                         </h1>
                         <CloseIcon
-                            className="absolute top-0 right-0 w-[3rem] h-[3rem] p-[0.5rem] hover:bg-opacity-70"
+                            className="absolute top-0 right-0 w-[3rem] h-[3rem] p-[0.5rem] hover:bg-opacity-70 pointer-events-auto cursor-pointer"
                             onClick={handleCloseModal}
                         />
                     </header>
