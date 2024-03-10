@@ -3,14 +3,7 @@ import Guest from "@/Layouts/GuestLayout";
 import { Head, usePage } from "@inertiajs/react";
 import HeroSection from "./Section/HeroSection";
 import AboutSection from "./Section/AboutSection";
-import WebscreenImage from "@/Assets/Images/webscreen.webp";
 import "./HomePage.scss";
-import WhyUsSection from "./Section/WhyUsSection";
-import OurProcessSection from "./Section/OurProcessSection";
-import GoDownButton from "@/Components/General/GoDownButton";
-import PortfolioSnippetSection from "./PortfolioSnippetSection";
-import { useEffect } from "react";
-import BlogSection from "./Section/BlogSection";
 
 export default function HomePage() {
     const companyData: any = usePage().props.companyData; //get page info
@@ -62,10 +55,6 @@ export default function HomePage() {
             <Guest>
                 <HeroSection />
                 <AboutSection />
-                {/* <WhyUsSection />
-                <OurProcessSection />
-                <PortfolioSnippetSection />
-                <BlogSection /> */}
             </Guest>
         </>
     );

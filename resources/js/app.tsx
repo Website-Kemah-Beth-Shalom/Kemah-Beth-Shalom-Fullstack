@@ -3,24 +3,15 @@ import '@/Styles/global.scss';
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { ConfigProvider, theme } from 'antd';
 import {
-    useQuery,
-    useMutation,
-    useQueryClient,
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
-
-const client = new ApolloClient({
-    uri: '/graphql',
-    cache: new InMemoryCache(),
-});
-
+const appName = import.meta.env.VITE_APP_NAME || 'Kemah Beth Shalom';
 
 // for antd dark theme
 const { darkAlgorithm } = theme;
@@ -37,6 +28,9 @@ createInertiaApp({
         const root = createRoot(el);
         root.render(
             <QueryClientProvider client={queryClient}>
+                <ToastContainer
+                    position='bottom-right'
+                />
                 <ConfigProvider
                     theme={{
                         algorithm: darkAlgorithm,
@@ -48,9 +42,7 @@ createInertiaApp({
                         },
                     }}
                 >
-                    <ApolloProvider client={client}>
-                        <App {...props} />
-                    </ApolloProvider>
+                    <App {...props} />
                 </ConfigProvider>
             </QueryClientProvider>
         );

@@ -17,70 +17,43 @@ export default function GalleryPage({
                 <title>Gallery</title>
             </Head>
             <Guest>
-                <SectionContainer className="flex flex-col items-center justify-center text-center p-boxS">
-                    <h1 className='text-accent font-josh font-[700] text-[2.2rem]'>{companyData?.gallery_title}</h1>
-                    <p className='mt-[0.5rem] mb-[1.5rem]'>{companyData?.gallery_description}</p>
-                    <MasonryGrid>
-                        {images.data.map((image: ImageProps) => (
-                            <div className="p-4">
-                                <GalleryCard key={image.id} image={image}/>
-                            </div>
-                        ))}
-                    </MasonryGrid>
-                </SectionContainer>
+                <div
+                    className='flex flex-col items-center gap-4 w-full  text-center p-boxS rounded-md shadow-md'
+                >
+                    <section
+                        className='flex flex-col items-start gap-4 w-full  text-left p-boxS rounded-md'
+                    >
+                        <h1 className="font-merriweather text-[3rem] text-accent font-bold ">
+                            {companyData.gallery_title || 'Documentation'}
+                        </h1>
+                        <hr className="w-[30%] h-[0.1rem] bg-accent mb-[1rem]" />
+                        {/* Content */}
+                        <p
+                            className="text-primaryBlack font-jost w-full max-w-[60rem] text-[1.125rem]
+                        text-left"
+                        >
+                            {companyData.gallery_description}
+                        </p>
+                    </section>
+                    <section
+                        className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                    >
+                        {
+                            images.data.map((image: ImageProps) => (
+                                <img
+                                    className="w-full h-full object-cover
+                                    aspect-[16/9] rounded-md shadow-md cursor-pointer
+                                    "
+                                    key={image.id}
+                                    src={image.url}
+                                    alt={image.title}
+                                    draggable={false}
+                                />
+                            ))
+                        }
+                    </section>
+                </div>
             </Guest>
         </>
     )
 }
-
-const GalleryCard = ({ image }: {  image: ImageProps }) => {
-    const [isModalOpen, setIsModalOpen] = React.useState(false);
-    const handleOpenModal = () => setIsModalOpen(true);
-    const handleCloseModal = () => setIsModalOpen(false);
-    return (
-        <div
-            title={image.title} 
-            className="hover:opacity-70 rounded-xl overflow-hidden
-            w-auto h-auto cursor-pointer flex flex-col relative"
-            onClick={handleOpenModal}
-        >
-            <img 
-                className='w-full object-contain aspect-1'
-                src={image.url}
-                alt={image.title}
-                draggable={false}
-            />
-            <h1 className="absolute bottom-0 left-0 w-full text-white font-jost font-[700] text-[1.5rem]
-                p-boxS text-left"
-            >
-                {/* {image.title} */}
-            </h1>
-            {/* <p>{image.updated_at}</p> */}
-        </div>
-    );
-};
-
-// const GalleryCard: React.FC = () => {
-//     return (
-//         <>
-//             <Head>
-//                 <title>Documentation</title>
-//             </Head>
-//             <Guest>
-//                 <div className='w-7/12 mx-auto'>
-//                     <h1 className='mt-44 text-gold text-4xl text-center'>Dokumentasi</h1>
-//                     <p className='text-black text-4xl text-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada fames ac turpis egestas maecenas pharetra. Tempus quam pellentesque nec nam aliquam. A erat nam at lectus urna duis convallis convallis tellus. Id velit ut tortor pretium viverra suspendisse potenti. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi. Massa sed elementum tempus egestas. Ac placerat vestibulum lectus mauris ultrices eros. </p>
-//                     <MasonryGrid>
-
-//                         {Content.map((item, index) => (
-//                         <div key={index} className="p-4">
-//                             <img src={item.imageSrc} alt={item.title} className="w-full" />
-//                         </div>
-//                         ))}
-//                     </MasonryGrid>
-//                 </div>
-//             </Guest>
-//         </>
-//     )
-// }
-

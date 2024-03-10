@@ -6,9 +6,17 @@ export const fetchAllGalleryImages = async (searchTerm = "") => {
         const { data } = await axios.get(`/api/gallery?search=${searchTerm}`);
         return data;
     }
-    const response = await axios.get("/api/gallery");
+    const response = await axios.get("/api/gallery").then((response) => {
+        console.log(response);
+        return response;
+    }).catch((error) => {
+        console.log(error);
+        return error;
+    });
     return response.data;
 };
+
+
 
 export const uploadGalleryImage = async (imageFile: File) => {
     const formData = new FormData();
