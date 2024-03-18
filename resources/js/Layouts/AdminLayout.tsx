@@ -5,12 +5,10 @@ import { HamburgerIcon } from '@/Components/Icon';
 import { Confirmation } from '@/Components/Confirmation';
 
 
-export default function AdminLayout({ header, children }: PropsWithChildren<{ header?: ReactNode }>) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-
+export default function AdminLayout({ header, children, title }: {
+    header?: string, children?: ReactNode, title?: string
+}) {
     const [showingSidebar, setShowingSidebar] = useState(true);
-
-
     const [currentRoute, setCurrentRoute] = useState('')
     useEffect(() => {
         const curr = route().current()?.split('.')[1]
@@ -53,7 +51,8 @@ export default function AdminLayout({ header, children }: PropsWithChildren<{ he
                         <h1
                             className='text-white text-[1.5rem] font-bold capitalize h-full flex items-center justify-center'
                         >
-                            {currentRoute}
+                            {/* {currentRoute} */}
+                            {title ? title : currentRoute}
                         </h1>
                     </div>
                     {/* log out button */}
@@ -157,24 +156,12 @@ export default function AdminLayout({ header, children }: PropsWithChildren<{ he
 
 
 const Route = [
-    // {
-    //     name: 'General',
-    //     path: '/admin',
-    //     route: 'admin',
-    //     icon: 'https://www.svgrepo.com/show/346516/apps.svg'
-    // },
     {
         name: 'Content',
         path: '/admin/webconfig',
         route: 'webconfig',
         icon: 'https://www.svgrepo.com/show/378674/people-group.svg'
     },
-    // {
-    //     name: ' Products',
-    //     path: '/admin/product',
-    //     route: 'product',
-    //     icon: 'https://www.svgrepo.com/show/422038/product.svg'
-    // },
     {
         name: 'Gallery',
         path: '/admin/gallery',
@@ -186,6 +173,18 @@ const Route = [
         path: '/admin/blog',
         route: 'blog',
         icon: 'https://www.svgrepo.com/show/478768/blog-writing.svg'
+    },
+    {
+        name: 'Videos',
+        path: '/admin/video',
+        route: 'video',
+        icon: 'https://www.svgrepo.com/show/525163/video-frame-play-vertical.svg'
+    },
+    {
+        name: 'Profile',
+        path: '/admin/profile',
+        route: 'user',
+        icon: 'https://www.svgrepo.com/show/512729/profile-round-1342.svg'
     }
 ]
 
@@ -224,22 +223,3 @@ const SidebarItem = ({ name, path, route, active, icon }: {
     )
 }
 
-function NavLink({ active = false, className = '', children, ...props }: InertiaLinkProps & { active: boolean }) {
-    return (
-        <Link
-            {...props}
-
-        >
-            <span
-                className={`flex flex-row items-center gap-2.5 text-[1.25rem] focus:none text-[#000000]
-                    ${active ? 'font-bold' : ''}
-                    `}
-            >
-                <div
-                    className={`${active ? 'opacity-1' : 'opacity-0'} bg-secondary h-[0.5rem] w-[0.5rem] rounded-full `}
-                />
-                {children}
-            </span>
-        </Link>
-    );
-}

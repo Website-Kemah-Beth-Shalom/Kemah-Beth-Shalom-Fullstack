@@ -141,7 +141,7 @@ export default function Guest({
                         ))}
                         <a
                             href={companyData?.company_donation_link}
-                            className="font-jost font-bold bg-brown text-white rounded-md w-full h-[2.5rem] p-boxS 
+                            className="font-jost font-bold bg-brown text-white rounded-md w-full h-[2.5rem] p-boxS
                             my-[1rem] md:mb-0
                         flex items-center justify-center
                         "
@@ -150,21 +150,20 @@ export default function Guest({
                         </a>
                     </div>
                     <main className="bg-bg1">
-                    {children}
-                    
-                    {/* button whatsapp */}
-                    <a
-                        title="Hubungi kami lewat whatsapp!"
-                        href={`https://wa.me/${companyData?.company_whatsapp}`}
-                        className="fixed bottom-[3rem] right-[3rem] xl:bottom-[4rem] xl:right-[4rem] z-50 bg-green-500  transition-all duration-300 hover:bg-green-600 drop-shadow-lg rounded-full p-2"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://www.svgrepo.com/show/176768/whatsapp-social-media.svg"
-                            alt="whatsapp"
-                            className="w-auto h-[5rem] xl:h-[7rem] p-2"
-                        />
-                    </a>
+                        {children}
+                        {/* button whatsapp */}
+                        <a
+                            title="Hubungi kami lewat whatsapp!"
+                            href={`https://wa.me/${companyData?.company_whatsapp}`}
+                            className="fixed bottom-[0.5rem] right-[0.5rem] xl:bottom-[4rem] xl:right-[4rem] z-50 bg-green-500  transition-all duration-300 hover:bg-green-600 drop-shadow-lg rounded-full p-2"
+                            target="_blank"
+                        >
+                            <img
+                                src="https://www.svgrepo.com/show/176768/whatsapp-social-media.svg"
+                                alt="whatsapp"
+                                className="w-auto h-[4rem] xl:h-[5rem] p-2 hover:scale-110 transition-all duration-300"
+                            />
+                        </a>
                     </main>
                     {/* Footer */}
                     {footer ? <Footer /> : null}
@@ -185,6 +184,11 @@ const Route = [
         name: "Dokumentasi",
         path: "/gallery",
         route: "gallery",
+    },
+    {
+        name: "Video",
+        path: "/video",
+        route: "video",
     },
     {
         name: "Blog",

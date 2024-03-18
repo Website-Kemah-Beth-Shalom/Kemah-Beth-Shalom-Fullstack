@@ -11,6 +11,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SplashScrennController;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\WebconfigController;
 use App\Models\Image;
 use Illuminate\Foundation\Application;
@@ -79,7 +80,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
+// video
+Route::get('/video', [VideoController::class, 'index'])->name('video');
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin', function () {
@@ -136,6 +138,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('admin/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('admin/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('admin/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Video Admin
+    Route::get('admin/video', [VideoController::class, 'adminIndex'])->name('admin.video');
+    Route::get('admin/video/add', [VideoController::class, 'showAddVideoPage'])->name('admin.video.add');
+    Route::post('admin/video/add', [VideoController::class, 'addVideo'])->name('admin.video.add');
 });
 
 

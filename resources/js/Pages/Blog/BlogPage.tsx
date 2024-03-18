@@ -1,6 +1,6 @@
 import Guest from "@/Layouts/GuestLayout";
 import { convertDate } from "@/Utils/ConvertDate";
-import { Link, usePage } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 import React, { useEffect } from "react";
 import { BlogProps } from "@/types";
 
@@ -31,101 +31,107 @@ export default function BlogPage({ Blogs, Preview }: any) {
     };
 
     return (
-        <Guest>
-            <div className="flex flex-col justify-center items-center gap-5 p-boxS">
-                {/* Header */}
-                <div className="flex flex-col justify-center items-start gap-[0.5rem] p-boxS w-full">
-                    <h1 className="font-merriweather text-[3rem] text-accent font-bold ">
-                        {companyData.blog_title}
-                    </h1>
-                    <hr className="w-[30%] h-[0.1rem] bg-accent mb-[1rem]" />
-                    {/* Content */}
-                    <p
-                        className="text-primaryBlack font-jost w-full max-w-[60rem] text-[1.125rem]
-                        text-left"
-                    >
-                        {companyData.blog_description}
-                    </p>
-                </div>
-                <div
-                    className="flex flex-col justify-center items-start gap-5 w-full
-                    p-boxS"
-                >
-                    {/* Recomendation */}
-                    <div
-                        className="grid grid-cols-1 md:grid-cols-2
-                        w-full justify-between gap-5"
-                    >
-                        {BlogDatas.slice(0, 2).map((item: any) => {
-                            return <HeadCard key={item.id} {...item} />;
-                        })}
-                    </div>
-
-                    {/* Latest on Our blog  */}
-                    <br />
-                    <div className="w-full flex flex-col items-center gap-8">
-                        <h1 className="text-accent text-[2rem] font-[600] font-merriweather w-full text-center">
-                            Latest on Our blog
+        <>
+            <Head>
+                <title>Blog</title>
+                <meta name="description" content={companyData.blog_description} />
+            </Head>
+            <Guest>
+                <div className="flex flex-col justify-center items-center gap-5 p-boxS">
+                    {/* Header */}
+                    <div className="flex flex-col justify-center items-start gap-[0.5rem] p-boxS w-full">
+                        <h1 className="font-merriweather text-[3rem] text-accent font-bold ">
+                            {companyData.blog_title}
                         </h1>
-                        <div className="relative w-full md:w-[60vw]">
-                            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg
-                                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                                    />
-                                </svg>
-                            </div>
-                            <input
-                                title="Search"
-                                placeholder="Search an article"
-                                className="text-center p-boxS rounded-xl w-full md:w-[60vw] focus:ring-text3 focus:border-text3"
-                                onChange={handleSearch}
-                            />
-                        </div>
-                        {/* Content Mapping */}
+                        <hr className="w-[30%] h-[0.1rem] bg-accent mb-[1rem]" />
+                        {/* Content */}
+                        <p
+                            className="text-primaryBlack font-jost w-full max-w-[60rem] text-[1.125rem]
+                        text-left"
+                        >
+                            {companyData.blog_description}
+                        </p>
+                    </div>
+                    <div
+                        className="flex flex-col justify-center items-start gap-5 w-full
+                    p-boxS"
+                    >
+                        {/* Recomendation */}
                         <div
-                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+                            className="grid grid-cols-1 md:grid-cols-2
                         w-full justify-between gap-5"
                         >
-                            {filterData(BlogDatas, keywords).map(
-                                (item: BlogProps | any) => {
-                                    return <BlogCard key={item.id} {...item} />;
-                                }
-                            )}
+                            {BlogDatas.slice(0, 2).map((item: any) => {
+                                return <HeadCard key={item.id} {...item} />;
+                            })}
                         </div>
-                    </div>
 
-                    {/* Pagination */}
-                    <div className="flex flex-row gap-2 w-full justify-evenly">
-                        {Blogs.links.map((link: any, index: number) => {
-                            return (
-                                <Link
-                                    key={index}
-                                    dangerouslySetInnerHTML={{
-                                        __html: link.label,
-                                    }}
-                                    className="text-primaryBlack bg-white p-boxS rounded-xl whitespace-nowrap
+                        {/* Latest on Our blog  */}
+                        <br />
+                        <div className="w-full flex flex-col items-center gap-8">
+                            <h1 className="text-accent text-[2rem] font-[600] font-merriweather w-full text-center">
+                                Latest on Our blog
+                            </h1>
+                            <div className="relative w-full md:w-[60vw]">
+                                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg
+                                        className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                        />
+                                    </svg>
+                                </div>
+                                <input
+                                    title="Search"
+                                    placeholder="Search an article"
+                                    className="text-center p-boxS rounded-xl w-full md:w-[60vw] focus:ring-text3 focus:border-text3"
+                                    onChange={handleSearch}
+                                />
+                            </div>
+                            {/* Content Mapping */}
+                            <div
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+                        w-full justify-between gap-5"
+                            >
+                                {filterData(BlogDatas, keywords).map(
+                                    (item: BlogProps | any) => {
+                                        return <BlogCard key={item.id} {...item} />;
+                                    }
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Pagination */}
+                        <div className="flex flex-row gap-2 w-full justify-evenly">
+                            {Blogs.links.map((link: any, index: number) => {
+                                return (
+                                    <Link
+                                        key={index}
+                                        dangerouslySetInnerHTML={{
+                                            __html: link.label,
+                                        }}
+                                        className="text-primaryBlack bg-white p-boxS rounded-xl whitespace-nowrap
                                     hover:opacity-20 w-full text-center
                                     shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] font-niramit
                                     "
-                                    href={link.url}
-                                />
-                            );
-                        })}
+                                        href={link.url}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </Guest>
+            </Guest>
+        </>
     );
 }
 

@@ -1,20 +1,66 @@
-import GoDownButton from "@/Components/General/GoDownButton";
 import SectionContainer from "@/Components/General/SectionContainer";
-
-import aboutImage from "../Asset/aboutImage01.png";
-import { useEffect } from "react";
 import { Link, usePage } from "@inertiajs/react";
 import Image from "@/Components/Image";
+import { useGallery } from '@/Hooks/useGallery';
+import {
+    Swiper, SwiperSlide,
+} from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+
+// swiper modules
 
 function AboutSection() {
     const companyData: any = usePage().props.companyData; //get page info
 
-    useEffect(() => {
-        console.log(companyData);
-    }, []);
-
+    const { query } = useGallery();
+    const ArrayOfImages = query.data;
     return (
         <div className="flex flex-col items-center justify-center text-center gap-2 bg-primary">
+            <SectionContainer
+                className='flex flex-col items-center justify-center gap-2 bg-primary w-full my-[2rem] px-boxS py-[1.5rem]'
+            >
+
+                <header>
+                    <h1 className="text-accent font-jost font-[900] text-[2.5rem]">
+                        Dokumentasi Kami
+                    </h1>
+                    <p className="font-jost text-[1.125rem]">
+                        {/* {companyData?.about_slider_description} */}
+
+                    </p>
+                </header>
+
+                <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+                    className="w-full"
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    navigation
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false
+                    }}
+                    pagination={{ clickable: true }}
+                    scrollbar={{ draggable: true }}
+                >
+                    {
+                        ArrayOfImages?.map((image: any, index: number) => (
+                            <SwiperSlide
+                                key={index}
+                            >
+                                <img src={image.url}
+                                    className='aspect-square object-cover rounded-xl max-h-[30rem] w-full pointer-events-none'
+                                    alt="" />
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
+            </SectionContainer>
             {/* Siapa Kami */}
             <SectionContainer
                 className="flex flex-col items-center justify-center text-center gap-2 bg-primary w-full
@@ -69,13 +115,13 @@ function AboutSection() {
                     <Image
                         src={companyData?.about_vision_image_second}
                         className="rounded-full object-cover aspect-square w-[5rem] xl:w-[10rem]
-                    absolute top-[0%] left-[-15%]  
+                    absolute top-[0%] left-[-15%]
                     z-10"
                     />
                     <Image
                         src={companyData?.about_vision_image_third}
                         className="rounded-full object-cover aspect-square w-[10rem]
-                    absolute bottom-[-20%] right-[-10%]  
+                    absolute bottom-[-20%] right-[-10%]
                     z-10"
                     />
                 </div>
@@ -83,7 +129,7 @@ function AboutSection() {
 
             {/* Misi Kami */}
             <SectionContainer
-                className="flex flex-col-reverse 
+                className="flex flex-col-reverse
                 md:flex-row
                 items-center justify-center gap-2 bg-primary w-full
                 px-boxS py-[1.5rem] my-[2.5rem]"
@@ -121,7 +167,7 @@ function AboutSection() {
                             {companyData?.about_how_we_serve_title}
                         </h1>
                         <p
-                            className="font-jost 
+                            className="font-jost
                         text-[1.125rem]
                         text-center md:text-left"
                         >
@@ -144,7 +190,7 @@ function AboutSection() {
                     </div>
                     <Image
                         className="aspect-square object-cover rounded-[4rem]
-                        w-[20rem] 
+                        w-[20rem]
                         "
                         src={companyData?.about_how_we_serve_image}
                         alt=""
@@ -185,7 +231,7 @@ function AboutSection() {
                     hover:bg-transparent hover:text-accent hover:border-accent border-[2px]
                     border-accent
                     transition-all duration-300
-                    w-full md:w-[13rem] 
+                    w-full md:w-[13rem]
                     "
                     >
                         Donasi Sekarang
@@ -242,7 +288,7 @@ function AboutSection() {
                             src={companyData?.about_aniversary_image}
                             className="aspect-square object-cover
                             max-h-[10rem] md:max-h-[30rem]
-                            w-full 
+                            w-full
                             "
                         />
                     </div>

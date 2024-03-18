@@ -291,7 +291,7 @@ class WebconfigSeeder extends Seeder
             ],
 
 
-            // About 
+            // About
             [
                 'category' => 'home',
                 'title' => 'about_title',
@@ -486,6 +486,21 @@ class WebconfigSeeder extends Seeder
                 'alias' => 'Deskripsi Halaman Location',
                 'type' => 'text',
                 'value' => 'Lokasi Kami',
+            ],
+            // video
+            [
+                'category' => 'video',
+                'title' => 'video_title',
+                'alias' => 'Judul  Halaman Video',
+                'type' => 'text',
+                'value' => 'Video',
+            ],
+            [
+                'category' => 'video',
+                'title' => 'video_description',
+                'alias' => 'Deskripsi Halaman Video',
+                'type' => 'textarea',
+                'value' => 'Video dokumentasi kegiatan Kemah Beth Shalom',
             ],
             // Footer
             [

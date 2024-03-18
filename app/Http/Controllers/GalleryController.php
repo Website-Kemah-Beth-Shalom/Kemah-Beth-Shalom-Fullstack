@@ -56,13 +56,13 @@ class GalleryController extends Controller
 
     public function fetchAllGalleryData()
     {
-        $images = GalleryImage::with('image')->get();
+        $images = Image::where('is_display', true)->get();
         return response()->json($images);
     }
 
     public function fetchGalleryData($id)
     {
-        $image = GalleryImage::with('image')->where('id', $id)->first();
+        $image = Image::where('is_display', true)->find($id);
         return response()->json($image);
     }
 

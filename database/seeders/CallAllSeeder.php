@@ -19,8 +19,9 @@ class CallAllSeeder extends Seeder
             // MessageSeeder::class,
             // PostSeeder::class,
             // CommentSeeder::class,
-            CalculationSeeder::class,
+            // CalculationSeeder::class,
             // BlogSeeder::class,
+            VideoSeeder::class,
         ]);
     }
 }
