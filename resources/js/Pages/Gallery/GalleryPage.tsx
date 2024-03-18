@@ -3,7 +3,6 @@ import React from "react";
 import Guest from "@/Layouts/GuestLayout";
 import MasonryGrid from "@/Components/Gallery/MasonryLayout";
 import { PaginateImageProps, ImageProps } from "@/types";
-import SectionContainer from "@/Components/General/SectionContainer";
 
 export default function GalleryPage({
     images,
