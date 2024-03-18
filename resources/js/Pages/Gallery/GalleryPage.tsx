@@ -1,9 +1,9 @@
-import { Head, usePage } from '@inertiajs/react'
-import React from 'react';
-import Guest from '@/Layouts/GuestLayout';
+import { Head, usePage } from "@inertiajs/react";
+import React from "react";
+import Guest from "@/Layouts/GuestLayout";
 import MasonryGrid from "@/Components/Gallery/MasonryLayout";
-import { PaginateImageProps, ImageProps } from '@/types';
-import SectionContainer from '@/Components/General/SectionContainer';
+import { PaginateImageProps, ImageProps } from "@/types";
+import SectionContainer from "@/Components/General/SectionContainer";
 
 export default function GalleryPage({
     images,
@@ -17,40 +17,47 @@ export default function GalleryPage({
                 <title>Gallery</title>
             </Head>
             <Guest>
-                <SectionContainer className="flex flex-col items-center justify-center text-center p-boxS">
-                    <h1 className='text-accent font-josh font-[700] text-[2.2rem]'>{companyData?.gallery_title}</h1>
-                    <p className='mt-[0.5rem] mb-[1.5rem]'>{companyData?.gallery_description}</p>
-                    <MasonryGrid>
-                        {images.data.map((image: ImageProps) => (
-                            <div className="p-4">
-                                <GalleryCard key={image.id} image={image}/>
-                            </div>
-                        ))}
-                    </MasonryGrid>
-                </SectionContainer>
+                <div className="w-[100%] flex justify-center items-center">
+                    <div className="w-[100%] md:w-[70%] lg:w-[64%] flex flex-col items-center justify-center text-center p-boxS">
+                        <h1 className="text-accent font-josh font-[700] text-[2.2rem]">
+                            {companyData?.gallery_title}
+                        </h1>
+                        <p className="mt-[0.5rem] mb-[1.5rem]">
+                            {companyData?.gallery_description}
+                        </p>
+                        <MasonryGrid>
+                            {images.data.map((image: ImageProps) => (
+                                <div className="p-4">
+                                    <GalleryCard key={image.id} image={image} />
+                                </div>
+                            ))}
+                        </MasonryGrid>
+                    </div>
+                </div>
             </Guest>
         </>
-    )
+    );
 }
 
-const GalleryCard = ({ image }: {  image: ImageProps }) => {
+const GalleryCard = ({ image }: { image: ImageProps }) => {
     const [isModalOpen, setIsModalOpen] = React.useState(false);
     const handleOpenModal = () => setIsModalOpen(true);
     const handleCloseModal = () => setIsModalOpen(false);
     return (
         <div
-            title={image.title} 
+            title={image.title}
             className="hover:opacity-70 rounded-xl overflow-hidden
             w-auto h-auto cursor-pointer flex flex-col relative"
             onClick={handleOpenModal}
         >
-            <img 
-                className='w-full object-contain aspect-1'
+            <img
+                className="w-full object-contain aspect-1"
                 src={image.url}
                 alt={image.title}
                 draggable={false}
             />
-            <h1 className="absolute bottom-0 left-0 w-full text-white font-jost font-[700] text-[1.5rem]
+            <h1
+                className="absolute bottom-0 left-0 w-full text-white font-jost font-[700] text-[1.5rem]
                 p-boxS text-left"
             >
                 {/* {image.title} */}
@@ -83,4 +90,3 @@ const GalleryCard = ({ image }: {  image: ImageProps }) => {
 //         </>
 //     )
 // }
-
